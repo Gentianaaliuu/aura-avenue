@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { products } from "../data/products";
+import Link from "next/link";
 
 export default function ProductsPage() {
   return (
@@ -54,10 +55,12 @@ export default function ProductsPage() {
               ${product.price}
             </p>
 
-            <button className="mt-3 bg-black text-white px-4 py-2 rounded hover:opacity-80 transition">
-              View Product
-            </button>
-
+            <Link
+            href={`/products/${product.id}`}
+            className="mt-3 inline-block bg-black text-white px-4 py-2 rounded hover:opacity-80 transition"
+            >
+            View Product
+           </Link>
           </div>
         ))}
 
